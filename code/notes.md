@@ -1,9 +1,8 @@
 yarn parcel index.html
 /** @jsx Preact.h **/
 
+# Flow
 
-This one opens a browser using brows
-```
-browsh --startup-url http://localhost:1234
-```
-CTRL+q to exit Browsh
+1. implement observable & autorun
+2. add React, run parcel and browsh
+3. implement observer
