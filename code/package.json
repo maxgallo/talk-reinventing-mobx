@@ -11,7 +11,8 @@
     "react-dom": "^16.8.6"
   },
   "scripts": {
-    "start": "yarn parcel index.html"
+    "start": "yarn parcel index.html",
+    "browsh": "browsh --startup-url http://localhost:1234"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
