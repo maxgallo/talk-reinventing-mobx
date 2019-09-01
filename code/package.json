@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@babel/node": "^7.5.5",
     "mobx": "^5.13.0",
     "mobx-react": "^6.1.1",
     "react": "^16.8.6",
@@ -12,7 +13,8 @@
   },
   "scripts": {
     "start": "yarn parcel index.html",
-    "browsh": "browsh --startup-url http://localhost:1234"
+    "web": "browsh --startup-url http://localhost:1234",
+    "nod": "nodemon --exec babel-node index.js"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-0",
