@@ -7,9 +7,9 @@ const album1 = observable({
     playCount: 0
 });
 
-autorun(() => { console.log(`******** PlayCount: ${album1.playCount}`)});
+autorun(() => { console.log(`** count: ${album1.playCount}`)});
 
-console.log('\n ------reactions-------- \n');
+console.log('\n---reactions---\n');
 
 setTimeout(() => album1.playCount = 1, 1000);
 setTimeout(() => album1.playCount = 2, 2000);
