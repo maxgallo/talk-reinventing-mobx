@@ -1,38 +1,29 @@
-// const { observable, autorun } = require('mobx')
-const React = require('react');
-const { render } = require('react-dom');
-// const { observer } = require('mobx-react');
-const { useRef, useState } = require('react');
+const { render } = require('react-dom')
+const React = require('react')
+const { useRef, useState } = require('react')
 
 const accessedObservables = [];
+let count = 0
 const derivationGraph = {};
-let count = 0;
 
-function observable(targetObject){
-    const observableObject = {};
-
-    const unique = `observable(${count++})`;
-    function getObservableId(key){
+function observable(targetObject) {
+    const unique = `observable(${count++}).`;
+    function getObservableId(key) {
         return unique + key;
     }
 
-    Object.keys(targetObject).forEach(objectKey => {
-        Object.defineProperty(
-            observableObject,
-            objectKey,
-            {
-                get(){
-                    accessedObservables.push(getObservableId(objectKey))
-                    return targetObject[objectKey];
-                },
-                set(value){
-                    targetObject[objectKey] = value;
-                    derivationGraph[getObservableId(objectKey)].forEach(runner => runner())
-                }
-            }
-        )
+    return new Proxy(targetObject, {
+        get(obj, key){
+            accessedObservables.push(getObservableId(key))
+            return obj[key];
+        },
+        set(obj, key, value){
+            obj[key] = value;
+            derivationGraph[getObservableId(key)].forEach(runner => {
+                runner();
+            })
+        }
     })
-    return observableObject;
 }
 
 function createReaction(onChange) {
@@ -42,14 +33,14 @@ function createReaction(onChange) {
             trackFunction();
             accessedObservables.forEach(observableId => {
                 derivationGraph[observableId] = derivationGraph[observableId] || new Set();
-                derivationGraph[observableId].add(onChange)
+                derivationGraph[observableId].add(onChange);
             })
         }
     }
 }
 
-function autorun(runner){
-    const reaction = createReaction(runner)
+function autorun(runner) {
+    const reaction = createReaction(runner);
     reaction.track(runner);
 }
 
@@ -62,10 +53,8 @@ function applyObserver(renderComponent) {
     const forceUpdate = useForceUpdate();
     const reaction = useRef(null);
 
-    if (!reaction.current) {
-        reaction.current = createReaction(() => {
-            forceUpdate()
-        });
+    if(!reaction.current) {
+        reaction.current = createReaction(forceUpdate)
     }
 
     let output
@@ -75,7 +64,7 @@ function applyObserver(renderComponent) {
     return output;
 }
 
-function observer(baseComponent) {
+function observer( baseComponent ){
     const wrappedComponent = (props, refs) => {
         return applyObserver(() => baseComponent(props, refs))
     }

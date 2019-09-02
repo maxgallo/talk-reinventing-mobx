@@ -1,4 +1,3 @@
-const { observer } = require('mobx-react');
 const { observable, autorun } = require('mobx')
 
 const album1 = observable({
