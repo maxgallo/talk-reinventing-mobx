@@ -31,3 +31,9 @@ kill 2:
 ```
 killall firefox
 ```
+
+# VIM folds
+- `zf` creates the fold (in visual mode)
+- `za` fold / unfold
+- `zd` deletes the fold
+- `zE` deletes all folds
