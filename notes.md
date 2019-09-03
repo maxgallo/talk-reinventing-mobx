@@ -12,6 +12,7 @@
 
 1. 19 minutes (speed-run)
 2. 20 minutes (speed-run)
+3. 13 minutes + 10 bugfix (speed-run)
 
 # Ideas to speed up
 1. Prepare two tmux windows (node, web)
