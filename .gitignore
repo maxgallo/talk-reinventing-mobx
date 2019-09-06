@@ -1,5 +1,6 @@
-node_modules
+.DS_Store
 *.swp
+.cache
 *.log
 dist
-.cache
+node_modules
