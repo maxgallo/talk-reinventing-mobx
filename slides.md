@@ -11,6 +11,7 @@ PALETTE
 pinkish FD4C69
 yellow FFEE4A
 blue 03005D
+
 lavander D8D4F2
 asphalt 474350
 
@@ -31,6 +32,22 @@ more: **maxgallo.io**
 
 ---
 
+# | **Agenda** |
+-
+-
+
+### [fit] >**1** Reinvent MobX 
+### [fit] >**2** React into the mix
+### [fit] >**3** Takeaways                 
+
+---
+<br>
+<br>
+
+### [fit] >**1** Reinvent MobX 
+
+---
+
 # [fit] Derivation _**Graph**_                       
 
 ![inline](diagrams/derivationGraph1.pdf)
@@ -47,6 +64,28 @@ observable __**<<--**__ **reaction**  ` `  **observable** __**-->>**__ reaction
 
 ---
 
+# [fit] Derivation _**Graph**_                       
+
+![inline](diagrams/derivationGrapha.pdf)
+
+observable __**<<--**__ **reaction**  ` `  **observable** __**-->>**__ reaction
+
+---
+
+# [fit] Derivation _**Graph**_                       
+
+![inline](diagrams/derivationGraphb.pdf)
+
+observable __**<<--**__ **reaction**  ` `  **observable** __**-->>**__ reaction
+
+---
+<br>
+<br>
+
+### [fit] >**2** React into the mix 
+
+---
+
 <br> <br>
 
 # [fit] Observable **changes**   -->>   React Component **render**
@@ -56,6 +95,14 @@ observable __**<<--**__ **reaction**  ` `  **observable** __**-->>**__ reaction
 -
 
 # [fit] autorun**(**() => Album**.**render()**)**
+
+[.footer:@_maxgallo]
+
+---
+<br>
+<br>
+
+### [fit] >**3** Takeaways 
 
 ---
 
