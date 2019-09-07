@@ -7,7 +7,7 @@
 
 ---
 
-![right 35%](images/me.png)
+![right 35%](images/me_pink.png)
 
 #[fit] Hi
 #[fit] I'm __Max__ Gallo
@@ -74,7 +74,7 @@ more: **maxgallo.io**
 
 # [fit] Derivation _**Graph**_                       
 
-![inline](diagrams/derivationGrapha.pdf)
+![inline](diagrams/derivationGraph1.pdf)
 
 observable __**<<--**__ **reaction**
 
@@ -82,7 +82,7 @@ observable __**<<--**__ **reaction**
 
 # [fit] Derivation _**Graph**_                       
 
-![inline](diagrams/derivationGraphb.pdf)
+![inline](diagrams/derivationGraph2.pdf)
 
 observable __**<<--**__ **reaction**       **observable** __**-->>**__ reaction
 
