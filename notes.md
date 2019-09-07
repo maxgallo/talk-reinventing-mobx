@@ -10,11 +10,14 @@
 
 # Live Code Times
 
-1. 19 minutes (speed-run)
-2. 20 minutes (speed-run)
-3. 13 minutes + 10 bugfix (speed-run)
-4. 15 minutes (speed-run)
-5. 19 minutes (some talking)
+1. 19 minutes (live coding, speed-run)
+2. 20 minutes (live coding, speed-run)
+3. 13 minutes + 10 bugfix (live coding, speed-run)
+4. 15 minutes (live coding, speed-run)
+5. 19 minutes (live coding, some talking)
+6. 32 minutes (full talk, no errors)
+    - 16: finished mobx
+    - 24: start observer
 
 # Ideas to speed up
 1. Prepare two tmux windows (node, web)
