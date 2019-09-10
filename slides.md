@@ -105,7 +105,7 @@ observable __**<<--**__ **reaction**       **observable** __**-->>**__ reactio
 -
 -
 
-# [fit] Observable **changes**   -->>   React Component **render**
+# [fit] Observable **changes**   -->>   React Component **renders**
 -
 -
 # [fit] :point_up:                      :point_up:
@@ -171,6 +171,8 @@ blue **03005D**
 
 lavander D8D4F2
 asphalt 474350
+
+https://coolors.co/03005d-d8d4f2-fd4c69-ffee4a-474350
 
 ---
 
