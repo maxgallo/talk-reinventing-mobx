@@ -1,6 +1,7 @@
 # Setup
-- 25 visible lines (maybe less?)
+- 24 visible lines (maybe less?)
 - tmux: `set status off`
+- 1 panel on the left, 3 in vertical on the right
 
 # Live Code Flow
 
@@ -16,8 +17,8 @@
 4. 15 minutes (live coding, speed-run)
 5. 19 minutes (live coding, some talking)
 6. 32 minutes (full talk, no errors)
-    - 16: finished mobx
-    - 24: start observer
+7. 28 minutes (full talk, some errors)
+8. 32 minutes (full talk, more emphasis)
 
 # Ideas to speed up
 1. Prepare two tmux windows (node, web)

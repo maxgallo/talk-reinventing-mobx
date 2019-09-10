@@ -1,21 +1,21 @@
-// const { observable, autorun } = require('mobx')
-const React  = require('react');
+const React = require('react');
 const { render } = require('react-dom');
-// const { observer } = require('mobx-react');
 const { useRef, useState } = require('react');
+// const { observable, autorun } = require('mobx');
+// const { observer } = require('mobx-react');
 
-let accessedObservables = []
-const derivationGraph = {}
+let accessedObservables = [];
+const derivationGraph = {};
 
-function observable(targetObject) {
+function observable(targetObject){
     return new Proxy(targetObject, {
         get(obj, key) {
             accessedObservables.push(key);
-            return obj[key]
+            return obj[key];
         },
-        set(obj,key, value) {
+        set(obj, key, value) {
             obj[key] = value;
-            derivationGraph[key].forEach(runner => { runner() })
+            derivationGraph[key].forEach(runner => { runner()})
         }
     })
 }
@@ -23,9 +23,8 @@ function observable(targetObject) {
 function createReaction(onChange) {
     return {
         track: trackFunction => {
-            accessedObservables = []
+            accessedObservables = [];
             trackFunction()
-            console.log(accessedObservables)
             accessedObservables.forEach(observableId => {
                 derivationGraph[observableId] = derivationGraph[observableId] || [];
                 derivationGraph[observableId].push(onChange);
@@ -36,7 +35,7 @@ function createReaction(onChange) {
 
 function autorun(runner){
     const reaction = createReaction(runner);
-    reaction.track(runner);
+    reaction.track(runner)
 }
 
 function useForceUpdate(){
@@ -44,9 +43,9 @@ function useForceUpdate(){
     return () => set(x => !x);
 }
 
-function applyObserver(renderComponent){
+function applyObserver(renderComponent) {
     const reaction = useRef(null);
-    const forceUpdate = useForceUpdate()
+    const forceUpdate = useForceUpdate();
 
     if(!reaction.current) {
         reaction.current = createReaction(forceUpdate)
@@ -59,11 +58,11 @@ function applyObserver(renderComponent){
     return output;
 }
 
-function observer(baseComponent){
+function observer(baseComponent) {
     const wrappedComponent = (props, refs) => {
         return applyObserver(() => baseComponent(props, refs))
     }
-    return wrappedComponent
+    return wrappedComponent;
 }
 
 const album = observable({
@@ -93,12 +92,3 @@ render(
     <ObserverAlbum />,
     document.getElementById('root'),
 )
-
-
-
-
-
-
-
-
-
