@@ -76,7 +76,7 @@ more: **maxgallo.io**
 
 ![inline](diagrams/derivationGraph1.pdf)
 
-observable __**<<--**__ **reaction**
+step 1: **create the graph**
 
 ---
 
@@ -84,7 +84,7 @@ observable __**<<--**__ **reaction**
 
 ![inline](diagrams/derivationGraph2.pdf)
 
-observable __**<<--**__ **reaction**       **observable** __**-->>**__ reaction
+step 1: **create the graph**            step 2: **walk the graph**
 
 ---
 
