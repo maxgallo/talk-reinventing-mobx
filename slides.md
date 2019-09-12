@@ -159,23 +159,3 @@ more **maxgallo.io**
 #[fit] Thank __you__
 
 github.com/**maxgallo/talk-reinventing-mobx**
-
-
----
-
-# PALETTE
-
-pinkish **FD4C69**
-yellow **FFEE4A**
-blue **03005D**
-
-lavander D8D4F2
-asphalt 474350
-
-https://coolors.co/03005d-d8d4f2-fd4c69-ffee4a-474350
-
----
-
-# Monochrome
-
-:spades: :hearts: :clubs: :diamonds: :scissors: :black_nib: :pencil2: :relaxed: :heart: :v: :point_up: :sunny: :cloud: :snowflake: :a: :b: :o2: :recycle:
