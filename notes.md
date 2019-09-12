@@ -20,6 +20,7 @@
 7. 28 minutes (full talk, some errors)
 8. 32 minutes (full talk, more emphasis)
 9. 28 minutes (full talk, no errors)
+10. 30 minutes (full talk, 1 error)
 
 # Ideas to speed up
 1. Prepare two tmux windows (node, web)
