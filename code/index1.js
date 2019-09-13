@@ -1,11 +1,11 @@
-const React = require('react');
-const { render } = require('react-dom');
-const { useRef, useState } = require('react');
-// const { observable, autorun } = require('mobx');
-// const { observer } = require('mobx-react');
+// const { observable, autorun } = require('mobx')
+const React = require('react')
+const { render } = require('react-dom')
+// const { observer } = require('mobx-react')
+const { useRef, useState } = require('react')
 
-let accessedObservables = [];
-const derivationGraph = {};
+let accessedObservables = []
+const derivationGraph = {}
 
 function observable(targetObject){
     return new Proxy(targetObject, {
@@ -13,11 +13,11 @@ function observable(targetObject){
             accessedObservables.push(key);
             return obj[key];
         },
-        set(obj, key, value) {
-            obj[key] = value;
-            derivationGraph[key].forEach(runner => { runner()})
+        set(obj, key, value){
+            obj[key] = value
+            derivationGraph[key].forEach(runner => runner())
         }
-    })
+    });
 }
 
 function createReaction(onChange) {
@@ -25,42 +25,39 @@ function createReaction(onChange) {
         track: trackFunction => {
             accessedObservables = [];
             trackFunction()
-            accessedObservables.forEach(observableId => {
-                derivationGraph[observableId] = derivationGraph[observableId] || [];
-                derivationGraph[observableId].push(onChange);
+            console.log(accessedObservables)
+            accessedObservables.forEach(key => {
+                derivationGraph[key] = derivationGraph[key] || []
+                derivationGraph[key].push(onChange);
             })
         }
     }
 }
 
 function autorun(runner){
-    const reaction = createReaction(runner);
-    reaction.track(runner)
+    const reaction = createReaction(runner)
+    reaction.track(runner);
 }
 
 function useForceUpdate(){
-    const [,set] = useState(0);
-    return () => set(x => !x);
+    const [,set] = useState(0)
+    return () => set(x => !x)
 }
 
-function applyObserver(renderComponent) {
-    const reaction = useRef(null);
-    const forceUpdate = useForceUpdate();
+function observer(baseComponent){
+    const wrappedComponent = () => {
+        const forceUpdate = useForceUpdate();
+        const reaction = useRef(null)
 
-    if(!reaction.current) {
-        reaction.current = createReaction(forceUpdate)
-    }
+        if(!reaction.current) {
+            reaction.current = createReaction(forceUpdate)
+        }
 
-    let output
-    reaction.current.track(() => {
-        output = renderComponent()
-    })
-    return output;
-}
-
-function observer(baseComponent) {
-    const wrappedComponent = (props, refs) => {
-        return applyObserver(() => baseComponent(props, refs))
+        let output
+        reaction.current.track(() => {
+            output = baseComponent();
+        })
+        return output;
     }
     return wrappedComponent;
 }
@@ -84,7 +81,7 @@ const Album = () => (
         <h2>{album.title}</h2>
         <h2>{album.playCount}</h2>
     </div>
-)
+);
 
 const ObserverAlbum = observer(Album);
 
