@@ -4,10 +4,8 @@
 - [Proxy](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy)
 - [React Hooks](https://reactjs.org/docs/hooks-reference.html)
 
-## Tools
-
 ## Live Demo Setup
-- [vim](https://github.com/vim/vim)
+- [vim](https://github.com/vim/vim) (here you can find my dotfiles with the complete vim and tmux configuration https://github.com/maxgallo/dotfiles )
 - [tmux](https://github.com/tmux/tmux)
 - [nodemon](https://github.com/remy/nodemon)
 - [parcel](https://github.com/parcel-bundler/parcel)
@@ -17,7 +15,7 @@
 - [Deckset](https://www.deckset.com/)
 - [draw.io](https://www.draw.io)
 
-#### Color Schema
+#### Color Palette
 - pinkish #**FD4C69**
 - yellow #**FFEE4A**
 - blue #**03005D**
